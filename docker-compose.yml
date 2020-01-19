@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  web-server:
+    build:
+      context: .
+    container_name: web-app
+    volumes:
+      - ./src:/home/node/app/src
+    expose:
+      - "8080"
+    ports:
+      - "8080:8080"
+      - "9229:9229"
+    command: yarn start:dev

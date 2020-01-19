@@ -1,0 +1,31 @@
+{
+  "name": "yelp-search",
+  "version": "1.0.1",
+  "description": "Yelp search api",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "bunyan": "^1.5.0",
+    "express": "^4.17.1",
+    "lodash": "^4.17.15",
+    "yelp-fusion": "^3.0.0"
+  },
+  "devDependencies": {
+    "env-cmd": "^10.0.1",
+    "jest": "^24.9.0",
+    "nodemon": "^2.0.2",
+    "snazzy": "^8.0.0",
+    "standard": "^14.3.1",
+    "superagent": "^5.2.1"
+  },
+  "scripts": {
+    "lint": "standard | snazzy",
+    "lint:fix": "standard --fix",
+    "start": "env-cmd node bootstrap/app.js | bunyan",
+    "start:dev": "env-cmd nodemon bootstrap/app.js | bunyan",
+    "start:debug": "env-cmd nodemon --no-lazy --inspect-brk=9229 $npm_package_main",
+    "test": "yarn lint && env-cmd jest --config $npm_package_test",
+    "test:debug": "env-cmd jest --watch --config $npm_package_test"
+  },
+  "author": "Swaraj Giri <swarajgiri@gmail.com> (https://twitter.com/swarajgiri)",
+  "license": "MIT"
+}
